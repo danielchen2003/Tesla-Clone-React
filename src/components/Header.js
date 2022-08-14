@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
-import { selectCars } from "../features/car/carSlice";
-import { useSelector } from "react-redux";
+import React, { useState } from "react"
+import styled from "styled-components"
+import MenuIcon from "@mui/icons-material/Menu"
+import CloseIcon from "@mui/icons-material/Close"
+import { selectCars } from "../features/car/carSlice"
+import { useSelector } from "react-redux"
 
 function Header() {
-  const [burgerStatus, setBurgerStatus] = useState(false);
-  const cars = useSelector(selectCars);
+  const [burgerStatus, setBurgerStatus] = useState(false)
+  const cars = useSelector(selectCars)
 
   return (
     <Container>
@@ -27,14 +27,14 @@ function Header() {
         <a href="/">Account</a>
         <CustomMenu
           onClick={() => {
-            setBurgerStatus(true);
+            setBurgerStatus(true)
           }}
         />
       </RightMenu>
       <BurgerNav show={burgerStatus}>
         <CustomClose
           onClick={() => {
-            setBurgerStatus(false);
+            setBurgerStatus(false)
           }}
         />
         {cars &&
@@ -59,7 +59,7 @@ function Header() {
         </li>
       </BurgerNav>
     </Container>
-  );
+  )
 }
 
 const Container = styled.div`
@@ -73,12 +73,12 @@ const Container = styled.div`
   justify-content: space-between;
   padding: 0 20px;
   z-index: 1;
-`;
+`
 
 const Menu = styled.div`
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
   flex: 1;
 
   a {
@@ -90,7 +90,7 @@ const Menu = styled.div`
   @media (max-width: 768px) {
     display: none;
   }
-`;
+`
 
 const RightMenu = styled.div`
   display: flex;
@@ -101,11 +101,11 @@ const RightMenu = styled.div`
     text-transform: uppercase;
     margin-right: 10px;
   }
-`;
+`
 
 const CustomMenu = styled(MenuIcon)`
   cursor: pointer;
-`;
+`
 
 const BurgerNav = styled.div`
   position: fixed;
@@ -129,12 +129,12 @@ const BurgerNav = styled.div`
     }
   }
   z-index: 10;
-`;
+`
 
 const CustomClose = styled(CloseIcon)`
   align-self: end;
   cursor: pointer;
   margin-right: 10px;
-`;
+`
 
-export default Header;
+export default Header

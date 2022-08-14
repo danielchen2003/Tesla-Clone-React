@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
   cars: [
@@ -8,14 +8,15 @@ const initialState = {
     "Model Y",
     "Solar Roof",
     "Solar Panels",
+    "StartLink",
   ],
-};
+}
 
 const carSlice = createSlice({
   name: "car",
   initialState,
   reducers: {},
-});
+})
 
-export const selectCars = (state) => state.car.cars;
-export default carSlice.reducer;
+export const selectCars = (state) => state.car.cars
+export default carSlice.reducer
